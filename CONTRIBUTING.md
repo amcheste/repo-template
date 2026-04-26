@@ -1,43 +1,19 @@
 # Contributing
 
-## Branch Model
+The branching strategy, commit convention, and release process for this repo follow the canonical rules documented in my engineering handbook:
 
-| Branch | Purpose |
-|--------|---------|
-| `main` | Latest release — always stable, never directly committed to |
-| `develop` | Integration branch — all PRs target here |
-| `feature/*`, `fix/*` etc. | Short-lived branches off `develop` |
+- **Why:** [Branching Strategy philosophy](https://github.com/amcheste/engineering-handbook/blob/main/docs/philosophies/branching-strategy.md)
+- **How:** [Branching & Releases workflow](https://github.com/amcheste/engineering-handbook/blob/main/docs/workflows/branching-and-releases.md)
 
-## Commit Convention
+In short:
 
-This project uses [Conventional Commits](https://www.conventionalcommits.org/):
+- `main` = latest release. `develop` = integration branch (default).
+- Branch from `develop`. One logical change per PR. PRs target `develop`.
+- [Conventional Commits](https://www.conventionalcommits.org/) — `feat:` / `fix:` / `docs:` / `chore:` / `refactor:`, with `!` for breaking changes.
+- Releases are cut by `/publish-release` — version bump PR to `develop`, then `develop → main` via CLI merge (never GitHub's merge button), then semver tag.
 
-| Prefix | Use |
-|--------|-----|
-| `feat:` | New feature or capability |
-| `fix:` | Bug fix |
-| `docs:` | Documentation only |
-| `chore:` | Maintenance, dependencies, housekeeping |
-| `refactor:` | Code change that neither fixes a bug nor adds a feature |
+Repo-specific contribution notes (if any) live below this line.
 
-Breaking changes: append `!` after the type — e.g. `feat!: remove legacy API`.
+---
 
-One logical change per PR. Keep commits atomic and the history readable.
-
-## Development Workflow
-
-1. Branch from `develop`
-2. Make changes, commit with conventional commit messages
-3. Open a PR targeting `develop`
-4. CI must pass before merging
-
-## Release Process
-
-> Only the repo owner publishes releases.
-
-Releases are handled by the `/publish-release` Claude Code skill:
-
-1. Bumps version on `develop`, commits `chore: release v<version>`
-2. Opens a PR: `develop → main`
-3. Owner approves and merges
-4. Tags `main` and pushes — release pipeline fires automatically
+<!-- Project-specific contributing notes go here. Keep this section small — if a note applies to all repos, it belongs in the handbook, not here. -->
