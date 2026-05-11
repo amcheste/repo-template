@@ -13,4 +13,26 @@
 
 ---
 
+<!--
+This scaffold is brand-aligned with `@amcheste/brand`
+(https://github.com/amcheste/alanchester-brand). Badge colors,
+voice, and the accent rule already match the brand by default:
+
+  - Hunter Green `#1F4D3A` for the license badge
+  - Ink `#0B0B0C` for the version badge
+  - Hunter green is reserved for data, pivots, and the δ; don't
+    decorate with it
+  - No em dashes in prose, calibrated hedges, lowercase eyebrows,
+    numerical specificity
+
+When filling in this README and other docs, follow the brand voice
+rules:
+https://github.com/amcheste/alanchester-brand/blob/main/docs/voice.md
+
+For deeper integration (palette adoption, mark embedding, full
+theming sweep), paste the theming prompt into a Claude Code session
+here:
+https://github.com/amcheste/alanchester-brand/blob/main/docs/theming-prompt.md
+-->
+
 <!-- TODO: fill in the rest of the README -->
