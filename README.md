@@ -1,3 +1,21 @@
+<!--
+Project banner. Spec:
+  https://github.com/amcheste/alanchester-brand/blob/main/docs/banner-spec.md
+
+To enable: generate a banner via Claude Design (paste the
+design-session-brief plus the banner-spec request prompt), land
+the generated SVG and PNG exports in `assets/`, then uncomment the
+<img> block below by removing this whole HTML comment block and
+restoring the <p> tag.
+
+If this repo doesn't need a banner, delete this placeholder
+entirely.
+
+<p align="center">
+  <img src="assets/banner.svg" alt="<project> banner" width="100%">
+</p>
+-->
+
 <div align="center">
 
 # repo-name
