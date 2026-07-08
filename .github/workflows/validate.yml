@@ -4,6 +4,15 @@ on:
   push:
     branches: [main, develop]
   pull_request:
+    # Default types are [opened, synchronize, reopened]. `edited` is added
+    # so the workflow also fires on base-ref changes, which happen when a
+    # stacked PR's predecessor merges and GitHub auto-retargets the base
+    # (with delete-branch-on-merge enabled). Without it, retargeted PRs
+    # sit BLOCKED with required checks never reporting until someone
+    # pushes a commit. The cost is an extra CI run on PR title and body
+    # edits: acceptable noise. Proven on amcheste/niche-hunter, where the
+    # gap forced 11 manual empty-commit nudges across one PR stack.
+    types: [opened, synchronize, reopened, edited]
     branches: [main, develop]
   workflow_call:
 
